@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #303030;
+    color: #c2c2c2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    color: #D2691E;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Subtítulos */
+h3 {
+    font-size: 1.1em;
+    color: #c2c2c2;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Posiciona o botão de deslogar no canto superior esquerdo */
+a[href="/sair"] {
+    position: absolute; /* Posição absoluta */
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+}
+
+a[href="/banco"] {
+    position: absolute; /* Posição absoluta */
+    top: 80px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+}
+
+/* Contêiner para os itens */
+.items-container {
+    display: flex; /* Usar flexbox */
+    flex-wrap: wrap; /* Quebrar linha quando necessário */
+    justify-content: center; /* Centraliza os itens */
+    margin-top: 60px; /* Espaço acima dos itens */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Formulário de cada produto */
+.item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(50% - 20px); /* Largura de 50% menos o gap */
+    max-width: 400px; /* Largura máxima */
+    margin: 15px 0; /* Margem vertical */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.2s ease; /* Transição para hover */
+}
+
+.item:hover {
+    transform: scale(1.02); /* Efeito de aumento no hover */
+}
+
+/* Nome do produto */
+h4 {
+    color: #D2691E;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+/* Preço */
+p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Botão de compra */
+input[type="button"] {
+    background-color: #D2691E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-decoration: none;
+}
+
+input[type="button"]:hover {
+    background-color: #b85b17; /* Cor do botão ao passar o mouse */
+    transform: translateY(-2px); /* Elevação ao passar o mouse */
+}

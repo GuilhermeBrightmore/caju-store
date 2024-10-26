@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='loja.css')}}">
+    <title>Caju Store</title>
+</head>
+<body>
+    <a href="/sair"><input type="button" value="Deslogar"></a>
+    <a href="/banco"><input type="button" value="Banco"></a>
+    <h1>Seja bem vindo(a) {{contas[accid]['Nome']}}</h1>
+    <h3>Aqui você encontra todo tipo de produto</h3>
+    <h3>Saldos:</h3>
+    <h3>Livre: {{contas[accid]['Livre']}} | Mercado: {{contas[accid]['Mercado']}} | Refeição: {{contas[accid]['Refeicao']}}</h3>
+    
+    <div class="items-container">
+        {% for item in items %}
+            <div class="item">
+                <form action="" method="post">
+                    <h4>{{items[item]["Nome"]}}</h4>
+                    <p>Preço: {{items[item]["Preco"]}}</p>
+                    <a href="/pagamento/{{accid}}/{{item}}"><input type="button" value="Comprar"></a>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

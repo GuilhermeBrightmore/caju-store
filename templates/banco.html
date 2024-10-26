@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='banco.css') }}">
+</head>
+<body>
+    <div class="saldos">
+        <div class="saldo-box">
+            <h4>Livre:</h4>
+            <p>R$ {{contas[accid]['Livre']}}</p>
+        </div>
+        <div class="saldo-box">
+            <h4>Mercado</h4>
+            <p>R$ {{contas[accid]['Mercado']}}</p>
+        </div>
+        <div class="saldo-box">
+            <h4>Refeição</h4>
+            <p>R$ {{contas[accid]['Refeicao']}}</p>
+        </div>
+    </div>
+
+    <div class="transacoes">
+        <h3>Transações</h3>
+        {% for transacao in transacoes %}
+            {% if transacoes[transacao]["accid"] == accid %}
+                <p>{{transacoes[transacao]["Nome"]}} - R$ {{transacoes[transacao]["Preco"]}} - {{transacoes[transacao]["MCC"]}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
